@@ -1,0 +1,29 @@
+package test1;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.remote.RemoteWebDriver;
+
+
+import io.github.bonigarcia.wdm.WebDriverManager;
+
+public class test02 {
+
+	public static void main(String[] args) throws Exception {
+		WebDriverManager.chromedriver().setup();
+		RemoteWebDriver driver=new ChromeDriver();
+		driver.get("https://www.facebook.com/login.php/");
+		driver.navigate().refresh();
+		driver.findElement(By.name("email")).sendKeys("tejas");
+		driver.findElement(By.name("pass")).sendKeys("Tejas@16");
+		Thread.sleep(2000);
+		driver.findElement(By.xpath("login")).click();
+		driver.navigate().refresh();
+
+		
+		
+		
+            
+	}
+
+}
